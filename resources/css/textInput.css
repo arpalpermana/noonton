@@ -1,0 +1,3 @@
+.input-primary {
+    @apply bg-form-bg focus:bg-form-bg focus:outline-none;
+}
