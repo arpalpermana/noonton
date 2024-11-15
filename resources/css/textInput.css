@@ -1,3 +1,7 @@
 .input-primary {
     @apply bg-form-bg focus:bg-form-bg focus:outline-none;
 }
+
+.input-top-search {
+    @apply bg-white focus:bg-form-bg focus:outline-none;
+}
