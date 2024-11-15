@@ -1,3 +1,4 @@
+import { Head } from "@inertiajs/react";
 import Button from "./Button";
 
 export default function SubscriptionCard({
@@ -11,6 +12,7 @@ export default function SubscriptionCard({
 }) {
     return (
         <>
+            <Head title="Subscription" />
             {!isPremium && (
                 <div className="flex flex-col gap-[30px] py-[30px] px-7 outline outline-1 outline-[#F1F1F1] rounded-[26px] text-black w-[300px] h-[max-content]">
                     <div>

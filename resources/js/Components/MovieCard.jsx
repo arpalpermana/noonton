@@ -1,3 +1,5 @@
+import { Link } from "@inertiajs/react";
+
 export default function MovieCard({ i, slag, name, thumbnail, category }) {
     return (
         <div className="absolute group overflow-hidden mr-[30px]" key={i}>
@@ -17,7 +19,10 @@ export default function MovieCard({ i, slag, name, thumbnail, category }) {
             <div className="absolute top-1/2 left-1/2 -translate-y-[500px] group-hover:-translate-y-1/2 -translate-x-1/2 z-20 transition ease-in-out duration-500">
                 <img src="/icons/ic_play.svg" className="" width="50" alt="" />
             </div>
-            <a href={slag} className="inset-0 absolute z-50"></a>
+            <Link
+                href={route("prototype.movie.show", slag)}
+                className="inset-0 absolute z-50"
+            ></Link>
         </div>
     );
 }
