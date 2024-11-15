@@ -79,6 +79,7 @@ export default function Register() {
                                     <Button
                                         type="button"
                                         variant="white-outline"
+                                        className="text-[#f1f1f1]"
                                     >
                                         <span className="text-base font-semibold">
                                             {" "}
