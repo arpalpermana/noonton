@@ -11,9 +11,9 @@
 }
 
 .btn-light-outline {
-    @apply border border-white text-white;
+    @apply border border-white text-black;
 }
 
 .btn-white-outline {
-    @apply border border-[#f1f1f1] text-white;
+    @apply border border-[#f1f1f1] text-black;
 }
