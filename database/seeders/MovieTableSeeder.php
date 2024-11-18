@@ -18,7 +18,7 @@ class MovieTableSeeder extends Seeder
             'slug' => "the-batman",
             'category' => "Thriller",
             'video_url' => "https://www.youtube.com/watch?v=mqqft2x_Aa4",
-            'thumbnail' => "https://www.uhdpaper.com/2020/08/the-batman-movie-2022-4k-32951.html",
+            'thumbnail' => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFbyV0XHHjdYGKLHwCbn_HGG3ZCzqFaGSkcg&s",
             'rating' => 4.3,
             'is_featured' => true,
         ],[

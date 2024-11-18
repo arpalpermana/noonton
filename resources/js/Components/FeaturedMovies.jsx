@@ -13,7 +13,7 @@ export default function FeaturedMovies({
             <img
                 src={thumbnail}
                 className="object-cover rounded-[30px] w-[520px] h-[340px]"
-                alt=""
+                alt="Movie Thumbnail"
             />
             <div className="rating absolute top-0 left-0">
                 <div className="p-[30px] flex items-center gap-1">

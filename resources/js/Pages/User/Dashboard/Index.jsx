@@ -4,7 +4,7 @@ import FeaturedMovies from "@/Components/FeaturedMovies";
 import MovieCard from "@/Components/MovieCard";
 import { Head } from "@inertiajs/react";
 
-export default function Dashboard() {
+export default function Dashboard(moviesData) {
     const flickityOption = {
         cellAlign: "left",
         contain: true,
@@ -14,6 +14,12 @@ export default function Dashboard() {
         prevNextButtons: false,
         draggable: ">1",
     };
+
+    console.log(moviesData);
+
+    const featuredMovies = moviesData.featuredMovies;
+    const movies = moviesData.movies;
+
     return (
         <Authenticated>
             <Head>
@@ -27,15 +33,15 @@ export default function Dashboard() {
                     Featured Movies
                 </div>
                 <Flickity className="gap-[30px]" options={flickityOption}>
-                    {[1, 2, 3, 4, 5].map((i) => {
+                    {featuredMovies.map((featuredMovie, i) => {
                         return (
                             <FeaturedMovies
-                                key={i}
-                                slag="the-batman-in-love"
-                                name="The Batman In Love"
-                                category="Romance"
-                                thumbnail="/images/featured-1.png"
-                                rating={i + 1}
+                                key={featuredMovie.id}
+                                slag={featuredMovie.slug}
+                                name={featuredMovie.name}
+                                category={featuredMovie.category}
+                                thumbnail={featuredMovie.thumbnail}
+                                rating={featuredMovie.rating}
                             />
                         );
                     })}
@@ -46,14 +52,14 @@ export default function Dashboard() {
                     Browse
                 </div>
                 <Flickity className="gap-[30px]" options={flickityOption}>
-                    {[1, 2, 3, 4, 5, 6].map((i) => {
+                    {movies.map((movie, i) => {
                         return (
                             <MovieCard
-                                key={i}
-                                slag="meong-golden"
-                                name="Meong Golden"
-                                category="Horror Love"
-                                thumbnail="/images/browse-1.png"
+                                key={movie.id}
+                                slag={movie.slug}
+                                name={movie.name}
+                                category={movie.category}
+                                thumbnail={movie.thumbnail}
                             />
                         );
                     })}
