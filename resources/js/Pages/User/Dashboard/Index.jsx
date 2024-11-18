@@ -15,8 +15,6 @@ export default function Dashboard(moviesData) {
         draggable: ">1",
     };
 
-    console.log(moviesData);
-
     const featuredMovies = moviesData.featuredMovies;
     const movies = moviesData.movies;
 
