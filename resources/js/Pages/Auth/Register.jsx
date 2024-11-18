@@ -136,14 +136,14 @@ export default function Register() {
                                 </div>
                             </div>
                             <div className="grid space-y-[14px] mt-[30px]">
-                                <Button type="submit" disabled={processing}>
+                                <Button type="submit" processing={processing}>
                                     <span className="text-base font-semibold">
                                         {" "}
                                         Sign Up{" "}
                                     </span>
                                 </Button>
 
-                                <Link href={route("prototype.login")}>
+                                <Link href={route("login")}>
                                     <Button
                                         type="button"
                                         variant="white-outline"
