@@ -1,7 +1,7 @@
 import { Link } from "@inertiajs/react";
 
 export default function FeaturedMovies({
-    i,
+    id,
     slag,
     name,
     category,
@@ -9,11 +9,11 @@ export default function FeaturedMovies({
     rating,
 }) {
     return (
-        <div className="absolute overflow-hidden group mr-[30px]" key={i}>
+        <div className="absolute overflow-hidden group mr-[30px]" key={id}>
             <img
                 src={thumbnail}
                 className="object-cover rounded-[30px] w-[520px] h-[340px]"
-                alt=""
+                alt="Movie Thumbnail"
             />
             <div className="rating absolute top-0 left-0">
                 <div className="p-[30px] flex items-center gap-1">
@@ -23,7 +23,7 @@ export default function FeaturedMovies({
                     </span>
                 </div>
             </div>
-            <div className="absolute bottom-0 h-[100px] left-0 right-0 bg-gradient-to-t from-black rounded-bl-[28px] rounded-br-[28px] flex justify-between items-center px-7 h-[130px]">
+            <div className="absolute bottom-0  left-0 right-0 bg-gradient-to-t from-black rounded-bl-[28px] rounded-br-[28px] flex justify-between items-center px-7 h-[100px]">
                 <div>
                     <div className="font-medium text-[22px] text-white">
                         {name}
@@ -37,7 +37,7 @@ export default function FeaturedMovies({
                 </div>
             </div>
             <Link
-                href={route("prototype.movie.show", slag)}
+                href={route("user.dashboard.movie.show", slag)}
                 className="inset-0 absolute z-50"
             />
         </div>
