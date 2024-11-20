@@ -2,13 +2,13 @@ import { Head } from "@inertiajs/react";
 import Button from "./Button";
 
 export default function SubscriptionCard({
-    id,
+    uniqueKey,
     name,
     price,
     duration,
     features,
     onSelect,
-    isPremium,
+    isPremium = false,
 }) {
     return (
         <>
@@ -30,7 +30,7 @@ export default function SubscriptionCard({
                             return (
                                 <div
                                     className="flex items-center gap-2"
-                                    key={`${index}-${id}-${features}`}
+                                    key={`${index}-${uniqueKey}-${features}`}
                                 >
                                     <img src="/icons/ic_tick.svg" alt="" />
                                     <span className="text-sm"> {feature} </span>
@@ -66,7 +66,7 @@ export default function SubscriptionCard({
                             return (
                                 <div
                                     className="flex items-center gap-2"
-                                    key={`${index}-${id}-${features}`}
+                                    key={`${index}-${uniqueKey}-${features}`}
                                 >
                                     <svg
                                         width="24"
