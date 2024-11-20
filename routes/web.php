@@ -1,15 +1,25 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\User\DashboardContoller;
+use App\Http\Controllers\User\MovieContoller;
+use App\Http\Controllers\User\SubscriptionPlanController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Middleware\CheckUserSubscription;
 
-Route::redirect("/","/prototype/login");
+Route::redirect("/","login");
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return Inertia::render('User/Dashboard/Index');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware(['auth', 'role:user'])->prefix('dashboard')->name('user.dashboard.')->group(function () {
+    Route::get('/', [DashboardContoller::class, 'index'])->name('index');
+    Route::get('movie/{movie:slug}', [MovieContoller::class, 'show'])->name('movie.show')->middleware(CheckUserSubscription::class.':true');
+    Route::get('subscription-plan', [SubscriptionPlanController::class, 'index'])->name('subscriptionPlan.index')->middleware(CheckUserSubscription::class.':false');
+    Route::post('subscription-plan/{subscriptionPlan}/user-subscribe', [SubscriptionPlanController::class, 'subscribe'])->name('subscriptionPlan.subscribe')->middleware(CheckUserSubscription::class.':false');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

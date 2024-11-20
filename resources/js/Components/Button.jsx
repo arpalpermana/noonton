@@ -2,7 +2,7 @@ export default function Button({
     type = "submit",
     className = "",
     variant = "primary",
-    processing,
+    processing = false,
     children,
 }) {
     return (
